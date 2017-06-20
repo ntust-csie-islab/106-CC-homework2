@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+    <title>走失兒童協尋服務系統</title>
+  
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+			body{
+				background:#333 url(5-13050G32I0-51.jpg) repeat top left;
+				font-family:Arial;
+			}
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <ul id="menu">
+    <li><a href="home.html">Home</a></li>
+    <li>
+        <a href="#">快速搜尋</a>
+        <ul>
+            <li><a href="Shihlin.html">士林捷運站</a></li>
+            <li><a href="stationF2.html">台北車站F2</a></li>
+            <li><a href="stationF1.html">台北車站F1</a></li>
+            <li><a href="stationB1.html">台北車站B1</a></li>
+            <li><a href="stationB2.html">台北車站B2</a></li>
+            <li><a href="stationALL.html">台北車站(全部)</a></li>
+        </ul>
+    </li>
+    <li>
+	    <a href="#">記錄資料查詢</a>
+		<ul>
+            <li><a href="#"></a></li>
+            <li><a href="#">台北車站F1</a></li>
+            <li><a href="#">台北車站B1</a></li>
+        </ul>
+	</li>
+    <li><a href="test01.html">關於我們</a></li>
+	</ul>
+	</ul>
+	
+	<h1>使用 attr(); 抓取並控制 HTML 標籤的屬性</h1>
+  <img src="image/MAP_B1.JPG" alt="圖片替代文字" title="要顯示的文字" border=solid;>
+  <div id="BOX">
+
+  <div id="SMALL">
+     <img src="child/1.JPG" width="120" height="142" id="SS1">
+     <img src="child/2.JPG" width="120" height="142" id="SS2">
+  </div>
+      <script language="JavaScript">
+　    for (i=1; i<=2; i=i+1) {
+　　    document.write("第"+ i + "圈<br>");
+           document.write('<img src="child/' + i + '.JPG" width="120" height="142" id="SS1">')
+     　}
+
+
+      </script>
+
+</div>
+  </body>
+</html>
