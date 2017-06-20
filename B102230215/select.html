@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Yeeku.H.Lee(CrazyIt.org)" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="layout.css" rel="stylesheet" type="text/css">
+    <title> 走失兒童協尋服務系統 </title>
+	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="flycan.js"></script>
+</head>
+<body>
+<form action="http://www.crazyit.org" method="post">
+    下面是簡單的下拉式選單：<br />
+    <select id="skills" name="skills">
+        <option value="java">Java語言</option>
+        <option value="c">C語言</option>
+        <option value="ruby">Ruby語言</option>
+    </select><br /><br /><br />
+    下面是允許多選的清單方塊：<br />
+    <select id="books" name="books"
+        multiple="multiple" size="4">
+        <option value="java">圖解網頁設計必學的9堂課</option>
+        <option value="android">CSS3網頁設計實作應用</option>
+        <option value="ee">一定要學會的HTML5</option>
+    </select><br />
+    下面是允許多選的清單方塊：<br />
+    <select id="skills" name="skills"
+        multiple="multiple" size="6">
+        <optgroup label="網頁設計系列書籍">
+            <option value="java" >圖解網頁設計必學的9堂課</option>
+            <option value="android">CSS3網頁設計實作應用</option>
+            <option value="ee">一定要學會的HTML5</option>
+        </optgroup>
+        <optgroup label="其他書籍">
+            <option value="struts">Eclipse完全攻略</option>
+            <option value="ror">if與else的思考術</option>
+        </optgroup>
+    </select><br />
+    <button type="submit"><b>提交</b></button><br />
+	
+	<h1>使用 attr(); 抓取並控制 HTML 標籤的屬性</h1>
+    <h1>使用 attr(); 抓取並控制 HTML</h1>
+<div id="BOX">
+
+  <div id="SMALL">
+      <img src="child/1.JPG" width="120" height="142" id="SS1">
+      <img src="child/2.JPG" width="120" height="142" id="SS2">
+  </div>
+	<img src="child/1.JPG" width="507" height="600" id="BIG">
+
+</div>
+ <script>    
+     var j = 0, k = files.length;
+     for (var i = 0; i < k; i++) {
+         var reader = new FileReader();
+         reader.onloadend = function (evt) {
+             if (evt.target.readyState == FileReader.DONE) {
+                 data["File_Content" + j] = btoa(evt.target.result);
+                 j++;
+                 if (j == k){
+                     alert('All files read');
+                 }
+             }
+         };
+         reader.readAsBinaryString(files[i]);
+     }
+  </script>
+
+</form>
+</body>
+</html>
