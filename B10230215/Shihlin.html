@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+  <link href="layout.css" rel="stylesheet" type="text/css">
+
+    <title>走失兒童協尋服務系統</title>
+  
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+			body{
+				background:#333 url(5-13050G32I0-51.jpg) repeat top left;
+				font-family:Arial;
+			}
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <ul id="menu">
+    <li><a href="home.html">Home</a></li>
+    <li>
+        <a href="#">快速搜尋</a>
+        <ul>
+            <li><a href="Shihlin.html">士林捷運站</a></li>
+            <li><a href="stationF2.html">台北車站F2</a></li>
+            <li><a href="stationF1.html">台北車站F1</a></li>
+            <li><a href="stationB1.html">台北車站B1</a></li>
+            <li><a href="stationB2.html">台北車站B2</a></li>
+      <li><a href="stationALL.html">台北車站(全部)</a></li>
+        </ul>
+    </li>
+    <li>
+      <a href="#">記錄資料查詢</a>
+    <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#">台北車站F1</a></li>
+            <li><a href="#">台北車站B1</a></li>
+        </ul>
+	</li>
+    <li><a href="test01.html">關於我們</a></li>
+	</ul>
+	</ul>
+	
+	
+  <!-- <img src="image_map/MAP_B1.JPG" width="900" height="700" title="要顯示的文字" border=solid;>-->
+  <div id="BOX01" class="BOX">
+    <div id="BIGMAP" class="MAP"> 
+      <h1>即時資訊</h1>
+      <img src="image_map/MAP_B1.jpg" width="600" height="400" id="BIG"><br>
+      <img src="original_picture/1.JPG" width="600" height="400" id="BIG01">
+    </div>
+    <div id="SMALL01" class="tmp">
+      <h1>30秒內</h1>
+     <!-- <img src="update/1.JPG" width="120" height="142" id="SS1" class="cam01"> -->
+
+    </div>
+    <div id="SMALL02" class="tmp">
+      <h1>30秒到1分鐘</h1>
+      <img src="update/1.JPG" width="120" height="142" id="SS01">
+      <img src="update/2.JPG" width="120" height="142" id="SS02">
+      <img src="update/3.JPG" width="120" height="142" id="SS03">
+      <img src="update/4.JPG" width="120" height="142" id="SS04">
+      <img src="update/5.JPG" width="120" height="142" id="SS05">
+      <img src="update/6.JPG" width="120" height="142" id="SS06">
+    </div>
+
+  </div>
+      <script language="JavaScript">
+　     //for (i=1; i<=8; i=i+1) {
+　　    //document.write("第"+ i + "圈<br>");
+       //    document.write('<img src="update/' + i + '.JPG" width="120" height="142" id="SS1">')
+       //}
+       $(function(){
+  
+        // imageList = document.getElementById("SMALL01").getElementsByTagName("img")
+        
+        // for(var i = 0; i < imageList.length; i++) {
+    
+        //   imageList[i].onclick = function() {
+        //     alert("test");
+        //     var N = $(this).attr("class").substr(3);
+        //     var NID = $(this).attr("id").substr(2);
+        //     console.log( N );
+        //     if(N ==1){
+        //       $("#BIG").attr( "src" , "image_map/出口1廣場.png" );  
+        //        }
+        //     else if(N ==2){
+        //             $("#BIG").attr( "src" , "image_map/出口2左側腳踏車區.png" );  
+        //             } 
+        //      else if(N ==3){
+        //             $("#BIG").attr( "src" , "image_map/扶梯1,2前月台中庭.png" );  
+        //             } 
+        //     $("#BIG01").attr( "src" , "original_picture/" + NID + ".JPG" );        
+        //   }
+        // }
+
+        });
+         var i=0;
+         var ID0=1,ID1=1,ID2=1;
+         function updata() {
+            i=i%4+1;
+            $.ajax({
+                   url: '/html5/child_data/updata/ROI_child03/'+ ID0 + '.jpg', //or your url
+                   success: function(data){
+                   
+                   $("#SMALL01").append('<img src="/html5/child_data/updata/ROI_child03/' + ID0 + '.jpg" width="110" height="142"  class="cam02" id="SS' + ID0 + '">' );
+                    ID0=ID0+1;
+                   },
+                   error: function(err){
+                   console.log('does not exist' + err);
+                   },
+                  })
+             $.ajax({
+                   url: '/html5/child_data/updata/ROI_child04/'+ ID1 + '.jpg', //or your url
+                   success: function(data){
+                   
+                   $("#SMALL01").append('<img src="child_data/updata/ROI_child04/' + ID1 + '.jpg" width="110" height="142"  class="cam03" id="SS' + ID1 + '">' );
+                    ID1=ID1+2;
+                   },
+                   error: function(err){
+                   console.log('does not exist' + err);
+                   },
+                  })
+             $.ajax({
+                   url: '/html5/child_data/updata/ROI_child05/'+ ID2 + '.jpg', //or your url
+                   success: function(data){
+                   
+                   $("#SMALL01").append('<img src="child_data/updata/ROI_child05/' + ID2 + '.jpg" width="110" height="142"  class="cam01" id="SS' + ID2 + '">' );
+                   ID2=ID2+2;
+                   },
+                   error: function(err){
+                   console.log('does not exist' + err);
+                   },
+                  })
+
+
+            $("#SMALL01 img").click(function(){
+              var N = $(this).attr("class").substr(3);
+              var NID = $(this).attr("id").substr(2);
+              console.log( NID  );
+              console.log( N );
+              if(N ==1){
+                $("#BIG").attr( "src" , "image_map/出口1廣場.png" ); 
+                $("#BIG01").attr( "src" , "child_data/updata/child05/" + NID + ".jpg" ); 
+                 }
+              else if(N ==2){
+                      $("#BIG").attr( "src" , "image_map/出口2左側腳踏車區.png" );  
+                      $("#BIG01").attr( "src" , "child_data/updata/child03/" + NID + ".jpg" );
+                      } 
+               else if(N ==3){
+                      $("#BIG").attr( "src" , "image_map/扶梯1,2前月台中庭.png" );  
+                      $("#BIG01").attr( "src" , "child_data/updata/child04/" + NID + ".jpg" );
+                      } 
+             //$("#BIG01").attr( "src" , "original_picture/" + NID + ".JPG" );
+            });  
+         // document.write('<img src="update/' + i + '.JPG" width="120" height="142" id="SS1">')
+         // $("#BIG").attr( "src" , "update/" + i + ".JPG" );  
+         }
+         setInterval(updata,2*100);
+      </script>
+  </body>
+</html>
